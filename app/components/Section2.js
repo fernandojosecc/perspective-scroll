@@ -1,6 +1,8 @@
 'use client';
 
-import { motion, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import { useTransform, motion } from 'framer-motion';
+import Pic2 from '@/public/pic2.jpg'; // Add this image to your /public folder
 
 export default function Section2({ scrollYProgress }) {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
@@ -9,9 +11,9 @@ export default function Section2({ scrollYProgress }) {
   return (
     <motion.div
       style={{ scale, rotate }}
-      className="h-screen bg-black text-white flex items-center justify-center text-[3.5vw]"
+      className="relative h-screen"
     >
-      <p>Final Section</p>
+      <Image src={Pic2} alt="img" placeholder="blur" fill />
     </motion.div>
   );
 }
